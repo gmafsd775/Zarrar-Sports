@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zarrar Sports | Premium Athletic Equipment</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary: #00ffcc;
+      --primary-dark: #00d4aa;
+      --secondary: #ff3366;
+      --dark: #0f0f0f;
+      --dark-light: #1a1a1a;
+      --dark-lighter: #2a2a2a;
+      --light: #ffffff;
+      --gray: #888888;
+      --transition: all 0.3s ease;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --radius: 12px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(to right, var(--dark), var(--dark-light));
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      border-bottom: 1px solid rgba(0, 255, 204, 0.2);
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      color: var(--primary);
+      font-size: 28px;
+    }
+
+    .logo h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 36px;
+      letter-spacing: 1.5px;
+      background: linear-gradient(to right, var(--primary), var(--light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+      transition: var(--transition);
+      position: relative;
+      padding: 5px 0;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.9)), 
+                  url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 120px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 255, 204, 0.1) 0%, rgba(255, 51, 102, 0.1) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 64px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      color: var(--light);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: var(--gray);
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(to right, var(--primary), var(--primary-dark));
+      color: var(--dark);
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: var(--transition);
+      box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 255, 204, 0.4);
+    }
+
+    /* Products Section */
+    .products-section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 48px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: var(--light);
+    }
+
+    .section-header p {
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Compact Product Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: var(--dark-light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      border-color: rgba(0, 255, 204, 0.3);
+    }
+
+    .product-image {
+      height: 120px;
+      width: 100%;
+      background-color: var(--dark-lighter);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-image i {
+      font-size: 35px;
+    }
+
+    .admin-controls {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      display: none;
+    }
+
+    .admin-controls button {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .admin-controls button:hover {
+      background: #ff1a4d;
+      transform: scale(1.1);
+    }
+
+    /* This is the fixed CSS - admin controls show when body has admin-mode class */
+    body.admin-mode .admin-controls {
+      display: block;
+    }
+
+    .product-content {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-content h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 18px;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      color: var(--light);
+      line-height: 1.2;
+    }
+
+    .product-content p {
+      color: var(--gray);
+      font-size: 12px;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+
+    .product-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn {
+      padding: 8px 12px;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      flex: 1;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, var(--primary), var(--primary-dark));
+      color: var(--dark);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 255, 204, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 255, 204, 0.1);
+    }
+
+    .btn-danger {
+      background: var(--secondary);
+      color: white;
+    }
+
+    .btn-danger:hover {
+      background: #ff1a4d;
+      transform: translateY(-2px);
+    }
+
+    /* Admin Section */
+    .admin-section {
+      padding: 80px 0;
+      background-color: var(--dark-light);
+    }
+
+    .admin-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .admin-card {
+      background-color: var(--dark);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .admin-card h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 32px;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+      color: var(--light);
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--light);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: var(--dark-lighter);
+      color: var(--light);
+      font-family: 'Poppins', sans-serif;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(0, 255, 204, 0.2);
+    }
+
+    .form-control::placeholder {
+      color: var(--gray);
+    }
+
+    textarea.form-control {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .file-upload {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .file-upload-btn {
+      background: var(--dark-lighter);
+      color: var(--light);
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .file-upload-btn:hover {
+      background: var(--dark);
+    }
+
+    .file-upload input[type="file"] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark-light);
+      padding: 60px 0 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 24px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      color: var(--light);
+    }
+
+    .footer-column p {
+      color: var(--gray);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--dark);
+      color: var(--light);
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .hero h2 {
+        font-size: 48px;
+      }
+      
+      .section-header h2 {
+        font-size: 36px;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav ul {
+        gap: 20px;
+      }
+      
+      .hero {
+        padding: 80px 0;
+      }
+      
+      .hero h2 {
+        font-size: 36px;
+      }
+      
+      .products-section {
+        padding: 60px 0;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+      }
+      
+      .product-image {
+        height: 100px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      
+      nav {
+        display: none;
+        width: 100%;
+        margin-top: 20px;
+      }
+      
+      nav.active {
+        display: block;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .hero h2 {
+        font-size: 32px;
+      }
+      
+      .admin-card {
+        padding: 30px 20px;
+      }
+      
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Notification */
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 20px;
+      border-radius: 8px;
+      color: var(--light);
+      font-weight: 500;
+      z-index: 1001;
+      transform: translateX(150%);
+      transition: transform 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .notification.show {
+      transform: translateX(0);
+    }
+
+    .notification.success {
+      background-color: var(--primary);
+      color: var(--dark);
+    }
+
+    .notification.error {
+      background-color: var(--secondary);
+    }
+    
+    /* Order Cart */
+    .order-cart {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--dark-light);
+      border-radius: var(--radius);
+      padding: 15px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 255, 204, 0.3);
+      z-index: 999;
+      max-width: 300px;
+    }
+    
+    .order-cart h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+    
+    .order-items {
+      max-height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+    
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 14px;
+    }
+    
+    .order-total {
+      font-weight: 700;
+      color: var(--primary);
+      text-align: right;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <i class="fas fa-dumbbell logo-icon"></i>
+        <h1>Zarrar Sports</h1>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#admin">Admin</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h2>PREMIUM SPORTS GEAR</h2>
+      <p>Elevate your performance with our high-quality athletic equipment. Order directly via our chatbot on the bottom right!</p>
+      <a href="#products" class="cta-button">Explore Products</a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2>OUR PRODUCTS</h2>
+        <p>Discover our premium collection of sports equipment designed for professional athletes and fitness enthusiasts.</p>
+      </div>
+      <div class="products-grid" id="productList">
+        <!-- Products will be dynamically added here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Admin Section -->
+  <section class="admin-section" id="admin">
+    <div class="container admin-container">
+      <!-- Admin Login -->
+      <div id="adminLogin" class="admin-card">
+        <h2>ADMIN ACCESS</h2>
+        <div class="form-group">
+          <label for="adminPass">Admin Password</label>
+          <input type="password" id="adminPass" class="form-control" placeholder="Enter Admin Password" />
+        </div>
+        <button class="btn btn-primary" onclick="verifyAdmin()" style="width: 100%;">Login</button>
+      </div>
+
+      <!-- Hidden Upload Form -->
+      <div id="uploadForm" class="admin-card" style="display:none;">
+        <h2>ADMIN PANEL</h2>
+        <div class="form-group">
+          <label for="productName">Product Name</label>
+          <input type="text" id="productName" class="form-control" placeholder="Product Name" required />
+        </div>
+        <div class="form-group">
+          <label for="productPrice">Price (PKR)</label>
+          <input type="number" id="productPrice" class="form-control" placeholder="Price in PKR" required />
+        </div>
+        <div class="form-group">
+          <label for="productDesc">Product Description</label>
+          <textarea id="productDesc" class="form-control" placeholder="Product Description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="productImage">Product Image</label>
+          <div class="file-upload">
+            <div class="file-upload-btn">
+              <span id="fileName">Choose an image</span>
+              <i class="fas fa-cloud-upload-alt"></i>
+            </div>
+            <input type="file" id="productImage" accept="image/*" required />
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="uploadProduct()" style="width: 100%;">Add Product</button>
+        <button class="btn btn-secondary" onclick="toggleAdminMode()" id="adminModeToggle" style="width: 100%; margin-top: 10px;">Enable Admin Mode</button>
+        <button class="btn btn-danger" onclick="deleteAllProducts()" style="width: 100%; margin-top: 10px;">Delete All Products</button>
+        <button class="btn btn-secondary" onclick="logoutAdmin()" style="width: 100%; margin-top: 10px;">Logout</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Zarrar Sports</h3>
+          <p>Providing premium sports equipment to athletes and fitness enthusiasts since 2010.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#admin">Admin</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Info</h3>
+          <ul class="footer-links">
+            <li><i class="fas fa-map-marker-alt"></i> Near Clock Tower, Faisalabad</li>
+            <li><i class="fas fa-phone"></i> +92 321 9088673</li>
+            <li><i class="fas fa-envelope"></i> damha577@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Zarrar Sports. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Order Cart -->
+  <div class="order-cart" id="orderCart" style="display: none;">
+    <h3>Your Orders</h3>
+    <div class="order-items" id="orderItems">
+      <!-- Order items will appear here -->
+    </div>
+    <div class="order-total" id="orderTotal">Total: PKR 0</div>
+    <button class="btn btn-primary" onclick="checkout()" style="width: 100%; margin-top: 10px;">Checkout via Chat</button>
+  </div>
+
+  <!-- Notification -->
+  <div id="notification" class="notification"></div>
+
+  <!-- Chatbot Integration -->
+  <script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+    createChat({
+      webhookUrl: 'https://damha.app.n8n.cloud/webhook/39403cec-24d4-49db-9e1d-b77b91915312/chat'
+    });
+  </script>
+
+  <!-- Upload + Persistence Logic -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('active');
+    });
+
+    // File input display
+    document.getElementById('productImage').addEventListener('change', function(e) {
+      const fileName = e.target.files[0] ? e.target.files[0].name : 'Choose an image';
+      document.getElementById('fileName').textContent = fileName;
+    });
+
+    // Notification function
+    function showNotification(message, type = 'success') {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.className = `notification ${type}`;
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, 3000);
+    }
+
+    // Admin mode state
+    let adminMode = false;
+    let isAdminLoggedIn = false;
+
+    // Order cart functionality
+    let cart = [];
+    
+    function updateCartDisplay() {
+      const orderItems = document.getElementById('orderItems');
+      const orderTotal = document.getElementById('orderTotal');
+      const orderCart = document.getElementById('orderCart');
+      
+      if (cart.length > 0) {
+        orderCart.style.display = 'block';
+      } else {
+        orderCart.style.display = 'none';
+        return;
+      }
+      
+      orderItems.innerHTML = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        const itemElement = document.createElement('div');
+        itemElement.className = 'order-item';
+        itemElement.innerHTML = `
+          <span>${item.name}</span>
+          <span>PKR ${item.price}</span>
+          <button onclick="removeFromCart(${index})" style="background: none; border: none; color: var(--secondary); cursor: pointer;">
+            <i class="fas fa-times"></i>
+          </button>
+        `;
+        orderItems.appendChild(itemElement);
+        total += parseInt(item.price);
+      });
+      
+      orderTotal.textContent = `Total: PKR ${total}`;
+    }
+    
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCartDisplay();
+      showNotification(`${name} added to cart!`);
+    }
+    
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartDisplay();
+    }
+    
+    function checkout() {
+      if (cart.length === 0) {
+        showNotification('Your cart is empty!', 'error');
+        return;
+      }
+      
+      let orderSummary = 'Order Summary:\n';
+      let total = 0;
+      
+      cart.forEach(item => {
+        orderSummary += `- ${item.name}: PKR ${item.price}\n`;
+        total += parseInt(item.price);
+      });
+      
+      orderSummary += `\nTotal: PKR ${total}`;
+      orderSummary += `\n\nPlease use the chatbot to complete your order.`;
+      
+      alert(orderSummary);
+      showNotification('Please use the chatbot to complete your order!');
+    }
+
+    // Delete ALL products (emergency function)
+    function deleteAllProducts() {
+      if (!isAdminLoggedIn) {
+        showNotification('Admin access required to delete products', 'error');
+        return;
+      }
+      
+      if (confirm('⚠️ WARNING: This will delete ALL products! Are you sure?')) {
+        const productList = document.getElementById('productList');
+        productList.innerHTML = '';
+        
+        // Clear localStorage
+        localStorage.removeItem('zarrarProducts');
+        
+        showNotification('All products deleted successfully!');
+      }
+    }
+
+    // Admin product deletion
+    function deleteProduct(productId) {
+      if (!isAdminLoggedIn) {
+        showNotification('Admin access required to delete products', 'error');
+        return;
+      }
+      
+      if (confirm('Are you sure you want to delete this product?')) {
+        const productElement = document.getElementById(productId);
+        if (productElement) {
+          productElement.remove();
+          
+          // Remove from localStorage
+          const savedProducts = JSON.parse(localStorage.getItem('zarrarProducts')) || [];
+          const updatedProducts = savedProducts.filter(product => !product.includes(productId));
+          localStorage.setItem('zarrarProducts', JSON.stringify(updatedProducts));
+          
+          showNotification('Product deleted successfully!');
+        } else {
+          // If product element not found, try force removal
+          const productList = document.getElementById('productList');
+          const products = productList.querySelectorAll('.product-card');
+          products.forEach(product => {
+            const productName = product.querySelector('h3').textContent;
+            if (productName.includes('Cricket Bat') || productName.includes('Excellent')) {
+              product.remove();
+              showNotification('Cricket Bat product removed!');
+            }
+          });
+        }
+      }
+    }
+
+    // Toggle admin mode for product deletion
+    function toggleAdminMode() {
+      if (!isAdminLoggedIn) {
+        showNotification('Please login as admin first', 'error');
+        return;
+      }
+      
+      adminMode = !adminMode;
+      const adminToggleBtn = document.getElementById('adminModeToggle');
+      
+      if (adminMode) {
+        document.body.classList.add('admin-mode');
+        adminToggleBtn.textContent = 'Disable Admin Mode';
+        showNotification('Admin mode enabled - you can now delete products');
+      } else {
+        document.body.classList.remove('admin-mode');
+        adminToggleBtn.textContent = 'Enable Admin Mode';
+        showNotification('Admin mode disabled');
+      }
+    }
+
+    // Load products on page load
+    window.onload = function() {
+      const savedProducts = JSON.parse(localStorage.getItem('zarrarProducts')) || [];
+      const productList = document.getElementById('productList');
+      
+      if (savedProducts.length === 0) {
+        // Show default products if none exist
+        const defaultProducts = [
+          {
+            name: "Excellent Cricket Bat",
+            price: "800",
+            desc: "Premium quality cricket bat for professional players",
+            image: "bat",
+            id: "product-cricket-bat"
+          },
+          {
+            name: "Pro Training Gloves",
+            price: "2499",
+            desc: "Premium leather training gloves with enhanced grip.",
+            image: "gloves",
+            id: "product-2"
+          },
+          {
+            name: "Elite Running Shoes",
+            price: "8999",
+            desc: "High-performance running shoes with advanced cushioning.",
+            image: "shoes",
+            id: "product-3"
+          }
+        ];
+        
+        defaultProducts.forEach(product => {
+          const productHTML = createProductHTML(product.name, product.price, product.desc, product.image, product.id);
+          productList.innerHTML += productHTML;
+        });
+        
+        // Save default products to localStorage
+        const defaultProductHTMLs = defaultProducts.map(product => 
+          createProductHTML(product.name, product.price, product.desc, product.image, product.id)
+        );
+        localStorage.setItem('zarrarProducts', JSON.stringify(defaultProductHTMLs));
+      } else {
+        savedProducts.forEach(product => {
+          productList.innerHTML += product;
+        });
+      }
+    };
+
+    function createProductHTML(name, price, desc, imageType, id) {
+      let icon = 'fa-dumbbell';
+      if (imageType === 'bat') icon = 'fa-baseball-bat-ball';
+      if (imageType === 'gloves') icon = 'fa-baseball';
+      if (imageType === 'shoes') icon = 'fa-shoe-prints';
+      if (imageType === 'football') icon = 'fa-futbol';
+      if (imageType === 'weights') icon = 'fa-weight-hanging';
+      if (imageType === 'bag') icon = 'fa-briefcase';
+      if (imageType === 'yoga') icon = 'fa-spa';
+      
+      return `
+        <div class="product-card" id="${id}">
+          <div class="product-image">
+            <i class="fas ${icon}"></i>
+            <div class="admin-controls">
+              <button onclick="deleteProduct('${id}')">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+          <div class="product-content">
+            <h3>${name}</h3>
+            <p>${desc}</p>
+            <div class="product-price">PKR ${price}</div>
+            <div class="product-actions">
+              <button class="btn btn-primary" onclick="addToCart('${name}', '${price}')">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function verifyAdmin() {
+      const pass = document.getElementById('adminPass').value;
+      if (pass === "zarrar123") {
+        document.getElementById('uploadForm').style.display = "block";
+        document.getElementById('adminLogin').style.display = "none";
+        isAdminLoggedIn = true;
+        showNotification("Admin access granted!", "success");
+      } else {
+        showNotification("Incorrect password. Access denied.", "error");
+      }
+    }
+
+    function logoutAdmin() {
+      document.getElementById('uploadForm').style.display = "none";
+      document.getElementById('adminLogin').style.display = "block";
+      document.getElementById('adminPass').value = "";
+      isAdminLoggedIn = false;
+      adminMode = false;
+      
+      // Disable admin mode on all products
+      document.body.classList.remove('admin-mode');
+      
+      showNotification("Logged out successfully.", "success");
+    }
+
+    function uploadProduct() {
+      const name = document.getElementById('productName').value;
+      const price = document.getElementById('productPrice').value;
+      const desc = document.getElementById('productDesc').value;
+      const imageInput = document.getElementById('productImage');
+      const file = imageInput.files[0];
+
+      if (!name || !price || !desc || !file) {
+        showNotification("Please fill all fields and select an image.", "error");
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const productId = 'product-' + Date.now();
+        const productHTML = `
+          <div class="product-card" id="${productId}">
+            <div class="product-image">
+              <img src="${e.target.result}" alt="${name}" />
+              <div class="admin-controls">
+                <button onclick="deleteProduct('${productId}')">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+            <div class="product-content">
+              <h3>${name}</h3>
+              <p>${desc}</p>
+              <div class="product-price">PKR ${price}</div>
+              <div class="product-actions">
+                <button class="btn btn-primary" onclick="addToCart('${name}', '${price}')">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        `;
+        document.getElementById('productList').innerHTML += productHTML;
+
+        const savedProducts = JSON.parse(localStorage.getItem('zarrarProducts')) || [];
+        savedProducts.push(productHTML);
+        localStorage.setItem('zarrarProducts', JSON.stringify(savedProducts));
+
+        // Reset form
+        document.getElementById('productName').value = '';
+        document.getElementById('productPrice').value = '';
+        document.getElementById('productDesc').value = '';
+        document.getElementById('productImage').value = '';
+        document.getElementById('fileName').textContent = 'Choose an image';
+        
+        showNotification("Product added successfully!", "success");
+      };
+      reader.readAsDataURL(file);
+    }
+  </script>
+
+</body>
+</html>
