@@ -843,12 +843,14 @@
   <div id="notification" class="notification"></div>
 
   <!-- Chatbot Integration -->
-  <script type="module">
-    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-    createChat({
-      webhookUrl: 'https://damha.app.n8n.cloud/webhook/39403cec-24d4-49db-9e1d-b77b91915312/chat'
-    });
-  </script>
+ <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://damha.app.n8n.cloud/webhook/39403cec-24d4-49db-9e1d-b77b91915312/chat'
+	});
+</script>
 
   <!-- Upload + Persistence Logic -->
   <script>
@@ -1178,4 +1180,5 @@
   </script>
 
 </body>
+
 </html>
