@@ -842,15 +842,6 @@
   <!-- Notification -->
   <div id="notification" class="notification"></div>
 
-  <!-- Chatbot Integration -->
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-	createChat({
-		webhookUrl: 'http://localhost:5678/webhook/39403cec-24d4-49db-9e1d-b77b91915312/cha'
-	});
-</script>
 
   <!-- Upload + Persistence Logic -->
   <script>
@@ -1178,9 +1169,16 @@
       reader.readAsDataURL(file);
     }
   </script>
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://n8n.srv1060272.hstgr.cloud/webhook/39403cec-24d4-49db-9e1d-b77b91915312/chat'
+	});
+</script>
 
 </body>
-
 </html>
 
 
